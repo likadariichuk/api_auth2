@@ -1,7 +1,26 @@
 # api_auth2
+
+    # Create the project directory
+    mkdir tutorial
+    cd tutorial
+
+    # Create a virtual environment to isolate our package dependencies locally
+    python3 -m venv env
+    source env/bin/activate  # On Windows use `env\Scripts\activate`
+
+    # Install Django and Django REST framework into the virtual environment
     pip install django
     pip install djangorestframework
 
+    # Set up a new project with a single application
+    django-admin startproject api .  # Note the trailing '.' character
+    cd tutorial
+    django-admin startapp accounts
+    cd ..
+    
+    python manage.py migrate
+    python manage.py createsuperuser --email admin@example.com --username admin
+    
     pip install djoser
     pip install djangorestframework_simplejwt
     pip install social-auth-app-django
